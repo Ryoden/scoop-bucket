@@ -1,5 +1,5 @@
 {
-    "version": "1.0.2.0",
+    "version": "1.0.3.0",
     "description": "DevToys",
     "homepage": "https://github.com/veler/DevToys/",
     "license": "MIT",
@@ -7,17 +7,13 @@
     "architecture": {
         "64bit": {
             "pre_install": "Get-ChildItem \"$dir\" -Exclude '*x64.msix' | Remove-Item -Force -Recurse",
-            "hash": "287e0fe143b25069df2d43eb8fd7dedeff9abc6f3fe7799ccb218a180d2068a3"
+            "hash": "e1ff20aaa08839d88f3ffece6478754ccaffdf8061d4369e5b37f6d82f8a050f"
         }
     },
     "installer": {
-        "script": [
-            "Get-ChildItem \"$dir\" '*.msix' | Select-Object -ExpandProperty Fullname | Expand-7zipArchive -DestinationPath \"$dir\" -Removal"
-        ]
+        "script": "Get-ChildItem \"$dir\" '*.msix' | Select-Object -ExpandProperty Fullname | Expand-7zipArchive -DestinationPath \"$dir\" -Removal"
     },
-    "bin": [
-        "DevToys.exe"
-    ],
+    "bin": "DevToys.exe",
     "shortcuts": [
         [
             "DevToys.exe",
